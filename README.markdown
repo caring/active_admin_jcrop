@@ -17,6 +17,21 @@ gem 'activeadmin'
 gem 'active_admin_jcrop' #, git: 'git://github.com/Ricardonacif/active_admin_jcrop.git'
 ```
 
+Add the JS and CSS to your ActiveAdmin asset bundle:
+```js
+// File: app/assets/stylesheets/active_admin.scss
+
+//= require active_admin_jcrop
+```
+
+```css
+/* File: app/assets/stylesheets/active_admin.scss */
+
+/*
+*= require active_admin_jcrop
+*/
+```
+
 Configure your form to use Jcrop:
 
 ```ruby
@@ -24,14 +39,14 @@ Configure your form to use Jcrop:
 ActiveAdmin.register Post do
 
   jcropable
-  
-  form do |f|                         
+
+  form do |f|
     f.inputs "Details" do
       f.input :image, as: :jcropable
-    end                      
+    end
     f.actions
-  end              
-  
+  end
+
 end
 
 ```
@@ -40,7 +55,7 @@ If you use Paperclip, you might need to set an empty original style hash so the 
 
 ```ruby
 has_attached_file :attachment, :styles => {:original => {}}
-                    
+
 ```
 If CarrierWave is used, please invoke :active_admin_crop in your uploader, and include both modules:
 
@@ -68,14 +83,14 @@ Simple, just pass the options here:
 ActiveAdmin.register Post do
 
   jcropable
-  
-  form do |f|                         
+
+  form do |f|
     f.inputs "Details" do
       f.input :image, as: :jcropable,  jcrop_options: {aspectRatio: 1, showDimensions: true} # showDimensions will display the current crop dimensions in the upper left hand corner
-    end                      
+    end
     f.actions
-  end              
-  
+  end
+
 end
 
 ```
