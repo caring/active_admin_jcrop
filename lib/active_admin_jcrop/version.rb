@@ -1,3 +1,3 @@
 module ActiveAdminJcrop
-  VERSION = "0.1.0-caring"
+  VERSION = "0.1.1-caring"
 end
