@@ -10,12 +10,10 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-group :development do
+group :development, :test do
   gem 'activeadmin', github: 'gregbell/active_admin' 
-  gem 'sass-rails', github: 'rails/sass-rails'
+  gem 'sass-rails', '~> 5.0'
 end
-
-
 
 # To use debugger
 # gem 'debugger'
